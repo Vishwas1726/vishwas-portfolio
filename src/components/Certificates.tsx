@@ -6,24 +6,24 @@ const Certificates = () => {
   const certificates = [
     {
       id: 1,
-      title: 'Oracle Database SQL Certified Associate',
+      title: 'Oracle AI Vector Search Certified Professional',
       issuer: 'Oracle',
-      date: 'January 2023',
+      date: 'April 2025',
       description: 'Certification validating SQL knowledge and the ability to use SQL to manipulate data within Oracle Database environment.',
     },
     {
       id: 2,
       title: 'Oracle APEX Developer Certified Professional',
       issuer: 'Oracle',
-      date: 'March 2023',
+      date: 'March 2025',
       description: 'Professional certification demonstrating expertise in building Oracle APEX applications with advanced features.',
     },
     {
       id: 3,
-      title: 'Oracle PL/SQL Developer Certified Associate',
+      title: 'Oracle Cloud Infrastructure 2025 Certified AI Foundation Associate',
       issuer: 'Oracle',
-      date: 'June 2023',
-      description: 'Certification validating skills in developing PL/SQL procedures, functions, and packages within Oracle Database.',
+      date: 'March 2025',
+      description: 'Certification validates foundational knowledge of AI concepts and their practical application within Oracle Cloud Infrastructure..',
     },
   ];
 
