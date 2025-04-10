@@ -1,6 +1,12 @@
 
-import React from 'react';
-import { File } from 'lucide-react';
+import React, { useState } from 'react';
+import { File, X } from 'lucide-react';
+import {
+  AlertDialog,
+  AlertDialogContent,
+  AlertDialogTrigger,
+  AlertDialogCancel
+} from '@/components/ui/alert-dialog';
 
 const Certificates = () => {
   const certificates = [
@@ -10,6 +16,7 @@ const Certificates = () => {
       issuer: 'Oracle',
       date: 'April 2025',
       description: 'Certification validating SQL knowledge and the ability to use SQL to manipulate data within Oracle Database environment.',
+      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80'
     },
     {
       id: 2,
@@ -17,6 +24,7 @@ const Certificates = () => {
       issuer: 'Oracle',
       date: 'March 2025',
       description: 'Professional certification demonstrating expertise in building Oracle APEX applications with advanced features.',
+      image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80'
     },
     {
       id: 3,
@@ -24,6 +32,7 @@ const Certificates = () => {
       issuer: 'Oracle',
       date: 'March 2025',
       description: 'Certification validates foundational knowledge of AI concepts and their practical application within Oracle Cloud Infrastructure..',
+      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80'
     },
   ];
 
@@ -50,14 +59,31 @@ const Certificates = () => {
                 <span className="text-portfolio-gray">{certificate.date}</span>
               </div>
               <p className="text-portfolio-gray text-sm">{certificate.description}</p>
-              <button className="mt-4 text-portfolio-blue hover:text-portfolio-blue-dark text-sm font-medium flex items-center gap-1 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                  <polyline points="7 10 12 15 17 10"></polyline>
-                  <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg>
-                <span>View Certificate</span>
-              </button>
+              
+              <AlertDialog>
+                <AlertDialogTrigger asChild>
+                  <button className="mt-4 text-portfolio-blue hover:text-portfolio-blue-dark text-sm font-medium flex items-center gap-1 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                      <polyline points="7 10 12 15 17 10"></polyline>
+                      <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    <span>View Certificate</span>
+                  </button>
+                </AlertDialogTrigger>
+                <AlertDialogContent className="max-w-3xl p-0 overflow-hidden">
+                  <div className="relative">
+                    <AlertDialogCancel className="absolute top-2 right-2 p-2 rounded-full bg-white/80 hover:bg-white text-gray-800 border-none">
+                      <X className="h-4 w-4" />
+                    </AlertDialogCancel>
+                    <img 
+                      src={certificate.image} 
+                      alt={`${certificate.title} certificate`} 
+                      className="w-full object-contain"
+                    />
+                  </div>
+                </AlertDialogContent>
+              </AlertDialog>
             </div>
           ))}
         </div>
